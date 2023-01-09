@@ -1,0 +1,31 @@
+dependencies:
+  # 1. Search on google "chainlink-brownie-contracts"
+  # 2. The format looks like this -> - <organization/repo>@<version>
+  # In this case, the dependencies is shown below
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+
+# 3. We need to then tell the compiler that @chainlink means the above dependencies
+compiler:
+  solc:
+    remappings:
+    # In this case, @chainlink is equal to smartcontractkit/chainlink-brownie-contracts@1.1.1
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1"
+
+# Environment setting
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}  
+
+# Add network addresses
+networks:
+  default: development
+  goerli:
+    eth_usd_price_feed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e"
+    verify: True
+  mainnet-fork-dev:
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    verify: False
+  development:
+    verify: False
+  ganache-local:
+    verify: False
