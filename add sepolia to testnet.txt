@@ -1,1 +1,0 @@
-type in "brownie networks add Ethereum Sepolia, host=https://nunki.htznr.fault.dev/rpc, chainid=11155111" in the powershell
